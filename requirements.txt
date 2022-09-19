@@ -1,0 +1,22 @@
+code-transformer @ git+https://github.com/danielzuegner/code-transformer.git
+numpy==1.18.1
+scipy==1.4.1
+scikit_learn==0.24.1
+torch==1.4.0
+tensorflow==2.3.0
+transformers==3.1.0
+datasets==1.9.0
+matplotlib==3.3.4
+joblib==0.14.1
+tqdm==4.43.0
+torchtext==0.5.0
+dill==0.3.4
+astor==0.8.1
+line_profiler==3.3.0
+radon==5.1.0
+mne==0.24.1
+mypy==0.941
+lxml==4.8.0
+pylint==2.13.4
+pylint-json2html==0.3.0
+pylint-exit==1.2.0
