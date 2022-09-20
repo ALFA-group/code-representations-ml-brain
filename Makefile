@@ -10,11 +10,6 @@ ACTIVATE = source activate $(PACKAGE)
 help : Makefile
 	@sed -n 's/^##//p' $<
 
-## update    : update repo with latest version from GitHub.
-.PHONY : update
-update :
-	@git pull origin NeurIPS2022
-
 ## env       : setup environment and install dependencies.
 .PHONY : env
 env : module seq2seq
@@ -39,33 +34,11 @@ $(PACKAGE)/inputs/ : setup/setup.sh
 $(PACKAGE)/.cache/profiler/ : $(PACKAGE)/utils.py
 	@$(ACTIVATE) ; $(EXEC) -m $(PACKAGE).utils $(PACKAGE) 2
 
-## test      : run testing pipeline.
-.PHONY : test
-test : pylint mypy
-pylint : env html/pylint/index.html
-mypy : env html/mypy/index.html
-html/pylint/index.html : html/pylint/index.json
-	@$(ACTIVATE) ; pylint-json2html -o $@ -e utf-8 $<
-html/pylint/index.json : $(PACKAGE)/*.py
-	@mkdir -p $(@D)
-	@$(ACTIVATE) ; pylint $(PACKAGE) --output-format=colorized,json:$@ || pylint-exit $$?
-html/mypy/index.html : $(PACKAGE)/*.py
-	@$(ACTIVATE) ; mypy --ignore-missing-import -p $(PACKAGE) --html-report $(@D)
-
-## docker    : build docker image and spin up container.
-.PHONY : docker
-docker :
-ifeq "$(shell docker images | grep $(PACKAGE) | wc -l)" "0"
-	@docker build -t $(PACKAGE)
-endif
-	@docker run -it $(PACKAGE)
-
 ## analysis  : run core analyses to replicate paper.
 .PHONY : analysis
 analysis : setup $(PACKAGE)/outputs/
 $(PACKAGE)/outputs/ : $(PACKAGE)/*.py
 	@$(ACTIVATE) ; $(EXEC) $(PACKAGE) mvpa
-	@$(ACTIVATE) ; $(EXEC) $(PACKAGE) prda
 
 ## paper     : run scripts to generate final plots and tables.
 .PHONY : paper

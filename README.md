@@ -1,28 +1,59 @@
-[![Tests](https://github.com/benlipkin/braincode/actions/workflows/testing.yml/badge.svg)](https://github.com/benlipkin/braincode/actions/workflows/testing.yml)
+# Convergent Representations of Computer Programs in Human and Artificial Neural Networks
 
-# BrainCode
+Resources for the paper `Convergent Representations of Computer Programs in Human and Artificial Neural Networks` by Shashank Srikant*, Benjamin Lipkin*, Anna A. Ivanova, Evelina Fedorenko, Una-May O'Reilly.
 
-Project investigating human and artificial neural representations of python program comprehension and execution.
+Published in NeurIPS 2022: [Link]
 
-This branch `NeurIPS2022` contains a static version of the broader codebase as necessary to replicate the paper.
+The labs involved:
+
+https://evlab.mit.edu/
+
+https://alfagroup.csail.mit.edu/
+
+For additional information, contact shash@mit.edu, lipkinb@mit.edu, or unamay@csail.mit.edu, evelina9@mit.edu.
+
+## Details
 
 This pipeline supports several major functions.
 
 -   **MVPA** (multivariate pattern analysis) evaluates decoding of **code properties** or **code model** representations from their respective **brain representations** within a collection of canonical **brain regions**.
 -   **PRDA** (program representation decoding analysis) evaluates decoding of **code properties** from **code model** representations.
 
+## Reproducing Paper Results
+
+This package provides an automated build using [GNU Make](https://www.gnu.org/software/make/manual/make.html). A single pipeline is provided, which starts from an empty environment, and provides ready to use software.
+
+```bash
+make setup # see 'make help' for more info
+```
+
+Pipelines also exist to run core analyses and generate figures and tables.
+
 To run all core experiments from the paper, the following command will suffice after setup:
 
 ```bash
-python braincode mvpa # runs all core MVPA analyses in parallel
-python braincoda prda # runs all supplemental PRDA analyses in parallel
+make analysis
 ```
 
 To regenerate tables and figures from the paper, run the following after completing the analyses:
 
 ```bash
-cd paper/scripts
-source run.sh # pulls scores, runs stats, generates plots and tables
+make paper
+```
+
+## Custom Analyses
+
+The pipeline can also be used for custom analyses, via the following command line interface.
+
+```bash
+# basic examples
+python braincode mvpa -f brain-MD -t task-structure # brain -> {task, model}
+python braincode prda -f code-bert -t task-tokens # model -> task
+
+# more complex example
+python braincode mvpa -f brain-lang+brain-MD -t code-projection -d 64 -m SpearmanRho -p $BASE_PATH --score_only
+# note how `+` operator can be used to join multiple representations via concatenation
+# additional metrics are available in the `metrics.py` module
 ```
 
 ### Supported Brain Regions
@@ -59,79 +90,18 @@ source run.sh # pulls scores, runs stats, generates plots and tables
 -   `code-roberta`<sup> [6](https://huggingface.co/huggingface/CodeBERTa-small-v1)</sup> (masked LM)
 -   `code-transformer`<sup> [3](https://arxiv.org/pdf/2103.11318.pdf)</sup> (LM + structure learning)
 
-## Installation
-
-Requirements: [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
-
-```bash
-conda create -n braincode python=3.7
-source activate braincode
-git clone --branch NeurIPS2022 --depth 1 https://github.com/anonmyous-author/anonymous-code
-cd braincode
-pip install . # -e for development mode
-cd setup
-source setup.sh # downloads 'large' files, e.g. datasets, models
-```
-
-## Run
-
-```bash
-usage: braincode [-h] [-f FEATURE] [-t TARGET] [-m METRIC] [-d CODE_MODEL_DIM]
-                 [-p BASE_PATH] [-s] [-b]
-                 {mvpa,prda}
-
-run specified analysis type
-
-positional arguments:
-  {mvpa,prda}
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -f FEATURE, --feature FEATURE
-  -t TARGET, --target TARGET
-  -m METRIC, --metric METRIC
-  -d CODE_MODEL_DIM, --code_model_dim CODE_MODEL_DIM
-  -p BASE_PATH, --base_path BASE_PATH
-  -s, --score_only
-  -b, --debug
-```
-
-note: BASE_PATH must be specified to match setup.sh if changed from default.
-
-**Sample calls**
-
-```bash
-# basic examples
-python braincode mvpa -f brain-MD -t task-structure # brain -> {task, model}
-python braincode prda -f code-bert -t task-tokens # model -> task
-
-# more complex example
-python braincode mvpa -f brain-lang+brain-MD -t code-projection -d 64 -m SpearmanRho -p $BASE_PATH --score_only
-# note how `+` operator can be used to join multiple representations via concatenation
-# additional metrics are available in the `metrics.py` module
-```
-
-## Automation
-
-### Make
-
-This package also provides an automated build using [GNU Make](https://www.gnu.org/software/make/manual/make.html). A single pipeline is provided, which starts from an empty environment, and proceeds through to the creation of paper tables and figures.
-
-```bash
-make paper # see 'make help' for more info
-```
-
-### Docker
-
-Build automation can also be containerized in [Docker](https://hub.docker.com/)
-
-```bash
-make docker
-```
-
 ## Citation
 
-If you use this work, please cite XXX (under review)
+If you use this work, please cite
+```
+@inproceeedings{SrikantLipkin2022,
+	author = {Srikant, Shashank and Lipkin, Benjamin and Ivanova, Anna and Fedorenko, Evelina and O'Reilly, Una-May},
+	title = {Convergent Representations of Computer Programs in Human and Artificial Neural Networks},
+	year = {2022},
+	journal = {Advances in Neural Information Processing Systems},
+	url = {}
+}
+```
 
 ## License
 
