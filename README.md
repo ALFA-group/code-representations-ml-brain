@@ -1,18 +1,10 @@
-# Convergent Representations of Computer Programs in Human and Artificial Neural Networks
+[![Tests](https://github.com/benlipkin/braincode/actions/workflows/testing.yml/badge.svg)](https://github.com/benlipkin/braincode/actions/workflows/testing.yml)
 
-Resources for the paper `Convergent Representations of Computer Programs in Human and Artificial Neural Networks` by Shashank Srikant*, Benjamin Lipkin*, Anna A. Ivanova, Evelina Fedorenko, Una-May O'Reilly.
+# BrainCode
 
-Published in NeurIPS 2022: [Link]
+Project investigating human and artificial neural representations of python program comprehension and execution.
 
-The labs involved:
-
-https://evlab.mit.edu/
-
-https://alfagroup.csail.mit.edu/
-
-For additional information, contact shash@mit.edu, lipkinb@mit.edu, or unamay@csail.mit.edu, evelina9@mit.edu.
-
-## Details
+This branch `NeurIPS2022` contains a static version of the broader codebase as necessary to replicate the paper.
 
 This pipeline supports several major functions.
 
@@ -74,7 +66,7 @@ Requirements: [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/in
 ```bash
 conda create -n braincode python=3.7
 source activate braincode
-git clone --branch main --depth 1 https://github.com/ALFA-group/code-representations-ml-brain
+git clone --branch NeurIPS2022 --depth 1 https://github.com/anonmyous-author/anonymous-code
 cd braincode
 pip install . # -e for development mode
 cd setup
@@ -104,7 +96,7 @@ optional arguments:
   -b, --debug
 ```
 
-_Note: BASE_PATH must be specified to match setup.sh if changed from default._
+note: BASE_PATH must be specified to match setup.sh if changed from default.
 
 **Sample calls**
 
@@ -119,17 +111,14 @@ python braincode mvpa -f brain-lang+brain-MD -t code-projection -d 64 -m Spearma
 # additional metrics are available in the `metrics.py` module
 ```
 
-## Reproducing results from our paper
-xx
-
 ## Automation
 
 ### Make
 
-This package also provides an automated build using [GNU Make](https://www.gnu.org/software/make/manual/make.html). A single pipeline is provided, which starts from an empty environment, and provides ready to use software.
+This package also provides an automated build using [GNU Make](https://www.gnu.org/software/make/manual/make.html). A single pipeline is provided, which starts from an empty environment, and proceeds through to the creation of paper tables and figures.
 
 ```bash
-make setup # see 'make help' for more info
+make paper # see 'make help' for more info
 ```
 
 ### Docker
@@ -142,10 +131,7 @@ make docker
 
 ## Citation
 
-If you use this work, please cite
-```
-[Citation]
-```
+If you use this work, please cite XXX (under review)
 
 ## License
 

@@ -59,8 +59,6 @@ ifeq "$(shell docker images | grep $(PACKAGE) | wc -l)" "0"
 	@docker build -t $(PACKAGE)
 endif
 	@docker run -it $(PACKAGE)
-<<<<<<< HEAD
-=======
 
 ## analysis  : run core analyses to replicate paper.
 .PHONY : analysis
@@ -74,4 +72,3 @@ $(PACKAGE)/outputs/ : $(PACKAGE)/*.py
 paper : analysis paper/plots/
 paper/plots/ : paper/scripts/*.py
 	@$(ACTIVATE) ; cd $(<D) ; bash run.sh
->>>>>>> 59ad86aacc8d5dc3dd013c461e886e05715030ab
