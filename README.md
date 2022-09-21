@@ -93,13 +93,12 @@ python braincode mvpa -f brain-lang+brain-MD -t code-projection -d 64 -m Spearma
 ## Citation
 
 If you use this work, please cite
-```
-@inproceeedings{SrikantLipkin2022,
+```bibtex
+@inproceedings{SrikantLipkin2022,
 	author = {Srikant, Shashank and Lipkin, Benjamin and Ivanova, Anna and Fedorenko, Evelina and O'Reilly, Una-May},
 	title = {Convergent Representations of Computer Programs in Human and Artificial Neural Networks},
 	year = {2022},
 	journal = {Advances in Neural Information Processing Systems},
-	url = {}
 }
 ```
 
