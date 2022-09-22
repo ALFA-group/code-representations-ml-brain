@@ -9,7 +9,7 @@ HOME_DIR=$1/braincode/
 cd $HOME_DIR
 
 ZIP_NAME=inputs.zip
-wget -O $ZIP_NAME https://www.dropbox.com/s/hxnxdhygk9b05rj/inputs.zip?dl=0
+wget -O $ZIP_NAME https://huggingface.co/datasets/benlipkin/braincode-neurips2022/resolve/main/inputs.zip
 unzip $ZIP_NAME -d inputs
 rm $ZIP_NAME
 

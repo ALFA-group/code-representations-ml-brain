@@ -21,13 +21,13 @@ mkdir -p $ENV_DIR
 
 cd $DATASET_DIR
 TAR_NAME=python.tar.gz
-wget -O $TAR_NAME https://www.dropbox.com/s/ukve7lu6t9d6kfu/python.tar.gz?dl=0
+wget -O $TAR_NAME https://huggingface.co/datasets/benlipkin/braincode-neurips2022/resolve/main/python.tar.gz
 tar -xvzf $TAR_NAME
 rm $TAR_NAME
 
 cd $MODEL_DIR
 TAR_NAME=csn-single-language-models.tar.gz
-wget -O $TAR_NAME https://www.dropbox.com/s/s7yjr5yr8hxyfvj/csn-single-language-models.tar.gz?dl=0
+wget -O $TAR_NAME https://huggingface.co/datasets/benlipkin/braincode-neurips2022/resolve/main/csn-single-language-models.tar.gz
 tar -xvzf $TAR_NAME
 rm $TAR_NAME
 rm -r great_code_summarization/
@@ -36,7 +36,7 @@ rm -r xl_net_code_summarization/XL-[234]
 
 cd $BINARY_DIR
 TAR_NAME=semantic.tar.gz
-wget -O $TAR_NAME https://www.dropbox.com/s/vxpcjs2myi8yych/semantic.tar.gz?dl=0
+wget -O $TAR_NAME https://huggingface.co/datasets/benlipkin/braincode-neurips2022/resolve/main/semantic.tar.gz
 tar -xvzf $TAR_NAME
 rm $TAR_NAME
 
