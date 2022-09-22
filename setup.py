@@ -9,10 +9,10 @@ with open("requirements.txt") as reqs_file:
 setup(
     name="braincode",
     version="0.1.0",
-    description="an investigation of computer program representations.",
+    description="Convergent Representations of Computer Programs in Human and Artificial Neural Networks",
     long_description=readme,
-    author="anonymous1 anonymous1",
-    author_email="anonymous1@anonymous1.com",
+    author="Benjamin Lipkin",
+    author_email="lipkinb@mit.edu",
     license="MIT",
     packages=find_packages(where="braincode"),
     install_requires=requirements,

@@ -41,6 +41,8 @@ To regenerate tables and figures from the paper, run the following after complet
 make paper
 ```
 
+Note - This command will take ~8 hours to complete on a machine without GPU cards.
+
 ## Custom Analyses
 
 The pipeline can also be used for custom analyses, via the following command line interface.
@@ -98,7 +100,12 @@ If you use this work, please cite
 	author = {Srikant, Shashank and Lipkin, Benjamin and Ivanova, Anna and Fedorenko, Evelina and O'Reilly, Una-May},
 	title = {Convergent Representations of Computer Programs in Human and Artificial Neural Networks},
 	year = {2022},
-	journal = {Advances in Neural Information Processing Systems},
+	booktitle = {Advances in Neural Information Processing Systems},
+	pages = {xx--xx},
+ 	publisher = {Curran Associates, Inc.},
+	volume = {35},
+	url = {https://proceedings.neurips.cc/paper/2022/file/xx.pdf},
+	editor = {M. ZZZ},
 }
 ```
 
