@@ -41,7 +41,7 @@ To regenerate tables and figures from the paper, run the following after complet
 make paper
 ```
 
-Note - This command will take ~8 hours to complete on a machine without GPU cards.
+Note - These commands will take ~8 hours to complete on a machine without GPU cards.
 
 ## Custom Analyses
 
