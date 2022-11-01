@@ -2,7 +2,20 @@
 
 Resources for the paper `Convergent Representations of Computer Programs in Human and Artificial Neural Networks` by Shashank Srikant*, Benjamin Lipkin*, Anna A. Ivanova, Evelina Fedorenko, Una-May O'Reilly.
 
-Published in NeurIPS 2022: [Link]
+Published in NeurIPS 2022: https://openreview.net/forum?id=AqexjBWRQFx
+
+Citation:
+```bibtex
+	@inproceedings{
+	srikant2022convergent,
+	title={Convergent Representations of Computer Programs in Human and Artificial Neural Networks},
+	author={Shashank Srikant and Ben Lipkin and Anna A Ivanova and Evelina Fedorenko and Una-May O'Reilly},
+	booktitle={Advances in Neural Information Processing Systems},
+	editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
+	year={2022},
+	url={https://openreview.net/forum?id=AqexjBWRQFx}
+}
+```
 
 The labs involved:
 
@@ -19,7 +32,7 @@ This pipeline supports several major functions.
 -   **MVPA** (multivariate pattern analysis) evaluates decoding of **code properties** or **code model** representations from their respective **brain representations** within a collection of canonical **brain regions**.
 -   **PRDA** (program representation decoding analysis) evaluates decoding of **code properties** from **code model** representations.
 
-## Reproducing Paper Results
+## Reproducing paper results
 
 This package provides an automated build using [GNU Make](https://www.gnu.org/software/make/manual/make.html). A single pipeline is provided, which starts from an empty environment, and provides ready to use software.
 
@@ -91,23 +104,6 @@ python braincode mvpa -f brain-lang+brain-MD -t code-projection -d 64 -m Spearma
 -   `code-bert`<sup> [5](https://arxiv.org/pdf/2002.08155.pdf)</sup> (masked LM)
 -   `code-roberta`<sup> [6](https://huggingface.co/huggingface/CodeBERTa-small-v1)</sup> (masked LM)
 -   `code-transformer`<sup> [3](https://arxiv.org/pdf/2103.11318.pdf)</sup> (LM + structure learning)
-
-## Citation
-
-If you use this work, please cite
-```bibtex
-@inproceedings{SrikantLipkin2022,
-	author = {Srikant, Shashank and Lipkin, Benjamin and Ivanova, Anna and Fedorenko, Evelina and O'Reilly, Una-May},
-	title = {Convergent Representations of Computer Programs in Human and Artificial Neural Networks},
-	year = {2022},
-	booktitle = {Advances in Neural Information Processing Systems},
-	pages = {xx--xx},
- 	publisher = {Curran Associates, Inc.},
-	volume = {35},
-	url = {https://proceedings.neurips.cc/paper/2022/file/xx.pdf},
-	editor = {M. ZZZ},
-}
-```
 
 ## License
 
