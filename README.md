@@ -1,6 +1,6 @@
 # Convergent Representations of Computer Programs in Human and Artificial Neural Networks
 
-Resources for the paper `Convergent Representations of Computer Programs in Human and Artificial Neural Networks` by Shashank Srikant*, Benjamin Lipkin*, Anna A. Ivanova, Evelina Fedorenko, Una-May O'Reilly.
+Resources for the paper `Convergent Representations of Computer Programs in Human and Artificial Neural Networks` by Shashank Srikant*, Benjamin Lipkin*, Anna A. Ivanova, Evelina Fedorenko, {Una-May} {O'R}eilly.
 
 Published in NeurIPS 2022: https://openreview.net/forum?id=AqexjBWRQFx
 
