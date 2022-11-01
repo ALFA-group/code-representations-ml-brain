@@ -6,10 +6,9 @@ Published in NeurIPS 2022: https://openreview.net/forum?id=AqexjBWRQFx
 
 Citation:
 ```bibtex
-	@inproceedings{
-	srikant2022convergent,
+@inproceedings{SrikantLipkin2022,
 	title={Convergent Representations of Computer Programs in Human and Artificial Neural Networks},
-	author={Shashank Srikant and Ben Lipkin and Anna A Ivanova and Evelina Fedorenko and Una-May O'Reilly},
+	author={Shashank Srikant* and Ben Lipkin* and Anna A Ivanova and Evelina Fedorenko and Una-May O'Reilly},
 	booktitle={Advances in Neural Information Processing Systems},
 	editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
 	year={2022},
