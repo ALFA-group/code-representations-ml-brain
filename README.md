@@ -24,6 +24,8 @@ https://alfagroup.csail.mit.edu/
 
 For additional information, contact shash@mit.edu, lipkinb@mit.edu, or unamay@csail.mit.edu, evelina9@mit.edu.
 
+Related material like slides, talk, a summary of our work etc. [are available here](https://shashank-srikant.github.io/notes/neurips22-brain/).
+
 ## Overview
 The goal of this work is to relate brain representations of code to (1) specific code properties and (2) representations of code produced by language models trained on code.  
 In Experiment 1, we predict the different static and dynamic analysis metrics from the brain MRI recordings (each of dimension D_B) of 24 human subjects reading 72 unique Python programs (N) by training separate linear models for each subject and metric.  
