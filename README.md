@@ -24,7 +24,8 @@ https://alfagroup.csail.mit.edu/
 
 For additional information, contact shash@mit.edu, lipkinb@mit.edu, or unamay@csail.mit.edu, evelina9@mit.edu.
 
-Related material like slides, talk, a summary of our work etc. [are available here](https://shashank-srikant.github.io/notes/neurips22-brain/).
+Related material like slides, talk, a summary of our work etc. [are available here](https://shashank-srikant.github.io/notes/neurips22-brain/).   
+Datasets and model checkpoints which this codebase downloads and analyzes are here: https://huggingface.co/datasets/benlipkin/braincode-neurips2022
 
 ## Overview
 The goal of this work is to relate brain representations of code to (1) specific code properties and (2) representations of code produced by language models trained on code.  
